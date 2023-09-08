@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="TP9 - création d'un formulaire d'incription avec animmation">
+    <title>Pablo Hououin - Fox Form</title>
+</head>
+<body>
+    <div class="header">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <button>Login</button>
+    </div>
+    <div class="wrapper-form">
+    <div class="close">X</div>
+    <form class='template-form' method="post">
+        <h2>Login</h2>
+        <div class="champs">
+            <input type="mail" for="mail" id="mail" placeholder="Email" required>
+            <img src="img/enveloppe 1.png" alt="logo d'une enveloppe">
+        </div>
+        <div class="champs">
+            <input type="password" for="mdp" id="mdp" placeholder="Password" required>
+            <img src="img/cadenas-verrouille 1.png" alt="logo d'une enveloppe">
+        </div>
+        <div class="wrapper-help">
+            <div class="wrapper-remember">
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">Remember me</label>
+            </div>
+            <a class="link" href="#">Forgot password ?</a>
+        </div>
+        <input type="submit" value="login">
+        <a class="link" id="go-register">Don’t have an account ?</a>
+    </form>
+    <form class='template-form' method="post" hidden>
+        <h2>Registration</h2>
+        <div class="champs">
+            <input type="text" for="username" id="username" placeholder="username" required>
+            <img src="img/utilisateur.png" alt="logo d'un utilisateur">
+        </div>
+        <div class="champs">
+            <input type="mail" for="mail" id="mail" placeholder="Email" required>
+            <img src="img/enveloppe 1.png" alt="logo d'une enveloppe">
+        </div>
+        <div class="champs">
+            <input type="password" for="mdp" id="mdp" placeholder="Password" required>
+            <img src="img/cadenas-verrouille 1.png" alt="logo d'un cadenas">
+        </div>
+        <div class="wrapper-help">
+            <div class="wrapper-remember">
+            <input type="checkbox" name="agree" id="agree" required>
+            <label for="agree">I agree to the terms & conditions</label>
+            </div>
+        </div>
+        <input type="submit" value="Register">
+        <a class="link" id="go-login">Already have a account ? <strong>Login</strong></a>
+    </form>
+    <img src="img/Fox2.png" alt="design d'un renard">
+    <img src="img/pate gauche.png" alt="pate gauche d'un renard">
+    <img src="img/pate droite.png" alt="pate droite d'un renard">
+</div>
+    
+</body>
+</html>

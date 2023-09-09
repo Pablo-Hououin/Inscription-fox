@@ -1,8 +1,10 @@
 html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 @font-face {
-    font-family: 'Poppins' ;
-    src: url(fonts/Poppins/26084221377.ttf);
+    font-family: 'Poppins-r' ;
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+    font-family: "poppins-bold";
+    src: url(fonts/Poppins/Poppins-Bold.ttf);
 }
 :root{
     font-size: 16px;
@@ -12,7 +14,8 @@ html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,ifr
 }
 html{
     font-family: 'Poppins',Arial, Helvetica, sans-serif;
-    padding: 28px 81px;
+    padding: 28px 81px 0 81px;
+    box-sizing: content-box;
 }
 body {
     width: 100%;
@@ -20,28 +23,32 @@ body {
     background: no-repeat url(img/lac-paysage-montagne-dans-hautes-terres-ai-generative.jpg);
     background-size: cover;
 }
-
-button{
+button,#login{
     cursor: pointer;
     border-radius: 10px;
     color: var(--white);
     font-weight: 700;
     text-align: center;
-    font-size: 1.5rem;
+    padding: 5px;
+}
+button{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 1.5rem;
 }
 
 .header{
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     column-gap: 80px;
 }
 
 .header a{
+    font-family: 'poppins-bold';
     text-decoration: none;
     color: var(--color-primary);
     font-size:1.5rem;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -53,4 +60,114 @@ button{
     height: 68px;
     border: 4px solid var(--color-secondary);
     background: var(--color-primary);
+}
+.wrapper-form{
+    position: absolute;
+    top:42%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:27%;
+    height:379px;
+    border-radius: 10px;
+    background: var(--white);
+}
+.close{
+    cursor: pointer;
+    align-self: flex-end;
+    width: 12%;
+    height: 44px;
+    padding:7px 5px;
+    border-radius: 0px 10px;
+    background: #A04940;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--white);
+}
+.template-form > * + *{
+    margin-top: 25px;
+}
+h2{
+    color: var(--color-secondary);
+    font-family: 'Poppins-bold';
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.champs{
+    display: flex;
+    justify-content: space-between;
+    padding : 3px;
+    border-bottom: var(--color-secondary) solid 2px;
+}
+.wrapper-help{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper-remember{
+    display: flex;
+    justify-content: center;
+}
+#remember{
+    margin-right:5px;
+}
+#login{
+    display: block;
+    width: 100%;
+    font-size: 1.3rem;
+    background: var(--color-secondary);
+}
+.wrapper-help label,.link{
+    color: var(--color-secondary);
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+}
+.link{
+    display: block;
+    padding-left: 10px;
+}
+.link:hover{
+    text-decoration: underline;
+}
+input{
+    background:none;
+    border: none;
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+input::placeholder{
+    color: var(--color-secondary);
+    font-weight: 500;
+}
+.wrapper-form img{
+    width: 20px;
+    height: 19px;
+}
+img[src="img/Fox.png"]{
+    position : absolute;
+    z-index:-1;
+    top:-203px;
+    left:107px;
+    width: 302.215px;
+    height: 284.94px;
+}
+img[src="img/pate_gauche.png"]{
+    position:absolute;
+    z-index: 3;
+    top: -9px;
+    left:118px;
+    width: 68.916px;
+    height: 32.59px;
+}
+img[src="img/pate_droite.png"]{
+    position:absolute;
+    z-index: 3;
+    top: -9px;
+    right:118px;
+    width: 68.915px;
+    height: 32.59px;
 }

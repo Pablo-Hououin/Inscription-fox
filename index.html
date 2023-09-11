@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <img src="img/menu.png" alt="icone d'un menu">
     <div class="header">
         <a href="#">Home</a>
         <a href="#">About</a>
@@ -14,11 +15,14 @@
         <a href="#">Contact</a>
         <button>Login</button>
     </div>
-    <div class="wrapper-form">
+    <div class="bloc-setting-fox">
     <img src="img/Fox.png" alt="design d'un renard">
     <img src="img/pate_gauche.png" alt="pate gauche d'un renard">
     <img src="img/pate_droite.png" alt="pate droite d'un renard">
-    <div class="close">X</div>
+    </div>
+    <div class="wrapper-form">
+    <div class="close"><p>X</p></div>
+    <div class="wrapper-template">
     <form class='template-form' method="post">
         <h2>Login</h2>
         <div class="champs">
@@ -32,6 +36,7 @@
         <div class="wrapper-help">
             <div class="wrapper-remember">
             <input type="checkbox" name="remember" id="remember">
+            <span class="checkmark"></span>
             <label for="remember">Remember me</label>
             </div>
             <a class="link" href="#">Forgot password ?</a>
@@ -39,7 +44,7 @@
         <input type="submit" value="login" id="login">
         <a class="link" id="go-register">Don’t have an account ?</a>
     </form>
-    <form class='template-form' method="post" hidden>
+    <form class='template-form' method="post">
         <h2>Registration</h2>
         <div class="champs">
             <input type="text" for="username" id="username" placeholder="username" required>
@@ -56,12 +61,14 @@
         <div class="wrapper-help">
             <div class="wrapper-remember">
             <input type="checkbox" name="agree" id="agree" required>
+            <span class="checkmark"></span>
             <label for="agree">I agree to the terms & conditions</label>
             </div>
         </div>
-        <input type="submit" value="Register">
+        <input type="submit" value="Register" id="Register">
         <a class="link" id="go-login">Already have a account ? <strong>Login</strong></a>
     </form>
+</div>
 </div>
 </body>
 </html>

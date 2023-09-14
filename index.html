@@ -5,9 +5,9 @@
     <meta name="description" content="TP9 - création d'un formulaire d'incription avec animmation">
     <title>Pablo Hououin - Fox Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" type="module" defer></script>
 </head>
 <body>
-    <img src="img/menu.png" alt="icone d'un menu">
     <div class="header">
         <a href="#">Home</a>
         <a href="#">About</a>
@@ -30,7 +30,7 @@
             <img src="img/enveloppe 1.png" alt="logo d'une enveloppe">
         </div>
         <div class="champs">
-            <input type="password" for="mdp" id="mdp" placeholder="Password" required>
+            <input type="password" for="mdp" id="mdp" placeholder="Password" required autocomplete="current-password">
             <img src="img/cadenas-verrouille 1.png" alt="logo d'une enveloppe">
         </div>
         <div class="wrapper-help">
@@ -47,15 +47,15 @@
     <form class='template-form' method="post">
         <h2>Registration</h2>
         <div class="champs">
-            <input type="text" for="username" id="username" placeholder="username" required>
+            <input type="text" for="username" id="username" placeholder="username" required required autocomplete="username">
             <img src="img/utilisateur.png" alt="logo d'un utilisateur">
         </div>
         <div class="champs">
-            <input type="mail" for="mail" id="mail" placeholder="Email" required>
+            <input type="mail" for="mail-register" id="mail-register" placeholder="Email" required>
             <img src="img/enveloppe 1.png" alt="logo d'une enveloppe">
         </div>
         <div class="champs">
-            <input type="password" for="mdp" id="mdp" placeholder="Password" required>
+            <input type="password" for="mdp-register" id="mdp-register" placeholder="Password" required autocomplete="new-password">
             <img src="img/cadenas-verrouille 1.png" alt="logo d'un cadenas">
         </div>
         <div class="wrapper-help">

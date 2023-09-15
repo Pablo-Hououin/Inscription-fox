@@ -230,8 +230,20 @@ input::placeholder{
     color: var(--color-secondary);
     font-weight: 500;
 }
+.cadenas{
+    position: relative;
+}
+.cadenas img:first-child{
+    opacity: 1;
+}
+.cadenas img:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
 .wrapper-form img{
-    width: 20px;
+    width: 21px;
     height: 19px;
 }
 img[src="img/Fox.png"]{

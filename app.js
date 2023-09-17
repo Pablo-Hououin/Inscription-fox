@@ -1,4 +1,4 @@
-import {displaylogin, displayornotpassword, displaypopup, displayregister} from "./functions.js"
+import {displaylogin, displayornotpassword, displaypopup, displayregister,improvepassword} from "./functions.js"
 
 const login = document.querySelector('.header button')
 const close = document.querySelector('.close')
@@ -11,3 +11,4 @@ displaylogin()
 displayregister()
 displayornotpassword(password)
 displayornotpassword(newpassword)
+improvepassword()

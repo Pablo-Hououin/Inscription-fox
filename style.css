@@ -124,7 +124,7 @@ button{
     position: relative;
 }
 .template-form > * + *{
-    margin-top: 25px;
+    margin-top: 20px;
 }
 .template-form:nth-child(2){
     position: absolute;
@@ -171,6 +171,11 @@ h2{
 #remember,#agree{
     opacity: 0;
     z-index: 1;
+}
+.erreur-password{
+    font-size: 0.5rem;
+    margin-top: 10px;
+    color: red;
 }
 .checkmark{
     position: absolute;

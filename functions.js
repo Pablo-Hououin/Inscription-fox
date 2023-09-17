@@ -7,7 +7,10 @@ const linkconnexion = document.querySelector('#go-login')
 const visibilities = document.querySelectorAll('.cadenas')
 const cadenasopen = document.querySelectorAll('.cadenas img:first-child')
 const cadenasclose = document.querySelectorAll('.cadenas img:nth-child(2)')
-
+const newpassword = document.querySelector('#mdp-register')
+const champspassword = document.querySelector('.template-form:nth-child(2) .champs:nth-child(4)')
+const register = document.querySelector('#Register')
+const template = document.querySelector('.gestionerreur')
 
 /**
  * animation pour déplacer les formulaires
@@ -95,5 +98,85 @@ export function displaylogin(){
             formconnexion.style.opacity = '1'
             formregister.style.opacity='0'
         },'250')
+    })
+}
+/**
+ * ajout du template et des paragraphes à modifier en cas d'erreur
+ */
+const clonetemplate = template.content.cloneNode(true);
+const paragraphes = clonetemplate.querySelectorAll('p')
+paragraphes.forEach(paragraphe =>{
+    paragraphe.classList.add('erreur-password')
+})
+const wrapperp = clonetemplate.querySelector('div')
+champspassword.insertAdjacentElement('afterend',wrapperp)
+
+/**
+ * définition des regex à accomplir pour compléter le formulaire
+ */
+const regexnumber = new RegExp("\\d")
+const regexmaj = new RegExp("[A-Z]")
+const regexspecial = new RegExp("\\W")
+
+export function improvepassword(){
+newpassword.addEventListener('keyup', ()=>{
+        const minletter = 12
+        Findcharacter(newpassword.value,regexnumber,'un chiffre',0)
+        Findcharacter(newpassword.value,regexmaj,'une lettre en majuscule',1)
+        Findcharacter(newpassword.value,regexspecial,'un caractère spécial',2)
+        numberletter(newpassword.value,minletter,3)
+})
+}
+/**
+ * Fonction qui recherche si un caractère est présent ou non
+ * @param {string} text - le texte ou on souhaite savoir s'il y a le caractère ou pas 
+ * @param {regex} regex - C'est une constante ou on a défini la règle regex 
+ * @param {string} message - message a indiqué dans les erreurs
+ * @param {number} position - indiquez quelle paragraphe, la fonction doit modifier le texte en cas d'erreur (on commence par 0)
+ */
+
+function Findcharacter(text,regex,message,position){
+    const promesse = new Promise((resolve, reject) => {
+        if(regex.test(text)){
+            resolve('le mot de passe contient ' + message.toLowerCase())
+        }
+        else{
+            reject('le mot de passe ne contient pas ' + message.toLowerCase());
+    }
+    })
+    promesse.then((resultat)=>{
+        paragraphes[position].innerText = ''
+        register.removeAttribute('disabled')
+    }
+    )
+    .catch((erreur)=>{
+        register.setAttribute('disabled','disabled')
+        paragraphes[position].innerText = erreur
+    })
+}
+/**
+ * Fonction qui recherche si un texte comprend un certain nombre de caractères
+ * @param {string} text 
+ * @param {number} maxnumber 
+ * @param {number} position - indique quelle paragraphe, la fonction doit modifier le texte (on commence par 0)
+ */
+function numberletter(text,maxnumber,position){
+    const promesse = new Promise((resolve, reject) => {
+        const numbercharacter = text.length
+        if (numbercharacter >= maxnumber) {
+            resolve(`le mot de passe contient plus de ${maxnumber} caractères`)
+        }
+        else{
+            reject (`le mot de passe ne contient pas plus de ${maxnumber} caractères`)
+        }
+    })
+    promesse.then((resultat)=>{
+        paragraphes[position].innerText = ''
+        register.removeAttribute('disabled')
+    }
+    )
+    .catch((erreur)=>{
+        register.setAttribute('disabled','disabled')
+        paragraphes[position].innerText = erreur
     })
 }

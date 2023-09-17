@@ -237,6 +237,7 @@ input::placeholder{
 }
 .cadenas{
     position: relative;
+    cursor: pointer;
 }
 .cadenas img:first-child{
     opacity: 1;

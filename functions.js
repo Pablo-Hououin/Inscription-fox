@@ -1,3 +1,4 @@
+export const newpassword = document.querySelector('#mdp-register')
 const popups = document.querySelectorAll('.wrapper-form,.bloc-setting-fox')
 const fox = document.querySelector('.bloc-setting-fox img:first-child')
 const formregister = document.querySelector('.template-form:nth-child(2)')
@@ -7,7 +8,7 @@ const linkconnexion = document.querySelector('#go-login')
 const visibilities = document.querySelectorAll('.cadenas')
 const cadenasopen = document.querySelectorAll('.cadenas img:first-child')
 const cadenasclose = document.querySelectorAll('.cadenas img:nth-child(2)')
-const newpassword = document.querySelector('#mdp-register')
+const newmail = document.querySelector('#mail-register')
 const champspassword = document.querySelector('.template-form:nth-child(2) .champs:nth-child(4)')
 const register = document.querySelector('#Register')
 const template = document.querySelector('.gestionerreur')
@@ -180,3 +181,38 @@ function numberletter(text,maxnumber,position){
         paragraphes[position].innerText = erreur
     })
 }
+/**
+ * Envoyer les cookies 
+ */
+export function sendregister(){
+    register.addEventListener('click',(e) =>{
+        e.preventDefault();
+        setcookies('mail',newmail.value)
+        formregister.reset()
+    })
+}
+
+/**
+ * 
+ * @param {string} name - donner un nom à ce cookie
+ * @param {string} value - assigner une valeur à ce cookie
+ */
+function setcookies(name,value){
+    document.cookie = `${name} =${encodeURIComponent(value)}`
+}
+
+/**
+ * 
+ * @param {string} name - Assigner le nom du cookie que vous souhaitez récupérer
+ * @returns {decodeURIComponent}
+ */
+export async function getcookies(name){
+    const cookies = document.cookie.split('; ')
+    const value = cookies
+        .find(c => c.startsWith(name + "="))
+        ?.split('=')[1]
+        if (value === undefined) {
+            return ''
+        } 
+        return decodeURIComponent(value)
+    }
